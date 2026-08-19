@@ -1,6 +1,9 @@
 :root {
-  --primary-color: #5fa4cf;
-  --primary-dark: #4a8cb5;
+  /* Colores Institucionales TYR Cargo */
+  --primary-dark: #3c577e;  /* Azul Marino (CARGO) */
+  --primary-color: #24698e; /* Azul Medio (Globo) */
+  --primary-light: #23acdd; /* Azul Cian (TYR) */
+  
   --secondary-color: #f8f9fa;
   --text-color: #333333;
   --border-color: #e0e0e0;
@@ -28,12 +31,13 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--primary-light);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--primary-color);
 }
 
 .container {
@@ -52,6 +56,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 20px;
+  border-bottom: 4px solid var(--primary-light);
 }
 
 .header h1 {

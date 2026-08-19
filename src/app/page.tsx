@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="container">
       <header className="header">
-        <Image src="/logo.png" alt="TYR Cargo Logo" width={80} height={80} style={{ borderRadius: '8px', backgroundColor: 'white', padding: '5px' }} />
+        <Image src="/logo.png" alt="TYR Cargo Logo" width={180} height={80} style={{ objectFit: 'contain' }} />
         <div>
           <h1>Listado de Contenedores 2026</h1>
           <p>Sistema Central - TYR Cargo</p>
@@ -40,7 +40,7 @@ export default function Home() {
                   </span>
                 </td>
                 <td>
-                  <button style={{ padding: '6px 12px', cursor: 'pointer' }}>Notificar</button>
+                  <button className={styles.actionButton}>Notificar</button>
                 </td>
               </tr>
               <tr>
@@ -54,7 +54,7 @@ export default function Home() {
                   </span>
                 </td>
                 <td>
-                  <button style={{ padding: '6px 12px', cursor: 'pointer' }}>Notificar</button>
+                  <button className={styles.actionButton}>Notificar</button>
                 </td>
               </tr>
               <tr>
@@ -68,7 +68,7 @@ export default function Home() {
                   </span>
                 </td>
                 <td>
-                  <button style={{ padding: '6px 12px', cursor: 'pointer' }}>Notificar</button>
+                  <button className={styles.actionButton}>Notificar</button>
                 </td>
               </tr>
             </tbody>
