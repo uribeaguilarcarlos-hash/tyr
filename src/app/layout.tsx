@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TYR Cargo - Listado de Contenedores",
-  description: "Sistema de gestión de contenedores y notificaciones",
+  title: "TYR Cargo - Logística Internacional",
+  description: "Soluciones logísticas integrales y de excelencia.",
 };
 
 export default function RootLayout({
@@ -13,7 +14,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <head>
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`
+            window.googleTranslateElementInit = function() {
+              new window.google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'es,en,zh-CN,de,fr,it,pt',
+                autoDisplay: false
+              }, 'google_translate_element');
+            }
+          `}
+        </Script>
+        <Script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" strategy="afterInteractive" />
+      </head>
+      <body>
+        <div id="google_translate_element" style={{ display: 'none' }}></div>
+        {children}
+      </body>
     </html>
   );
 }

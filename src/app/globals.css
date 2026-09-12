@@ -77,3 +77,9 @@ a:hover {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   border: 1px solid var(--border-color);
 }
+
+/* Hide Google Translate Top Banner */
+body { top: 0 !important; }
+.goog-te-banner-frame { display: none !important; }
+.skiptranslate:not(.langSelect) { display: none !important; }
+#google_translate_element { display: none !important; }

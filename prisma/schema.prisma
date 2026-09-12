@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Naviera {
+  id           Int          @id @default(autoincrement())
+  nombre       String       @unique
+  contenedores Contenedor[]
+}
+
+model Cliente {
+  id           Int          @id @default(autoincrement())
+  nombre       String       @unique
+  contenedores Contenedor[]
+}
+
+model Puerto {
+  id           Int          @id @default(autoincrement())
+  nombre       String       @unique
+  contenedores Contenedor[]
+}
+
+model Contenedor {
+  id                Int       @id @default(autoincrement())
+  folioInterno      String    @unique
+  referencia        String    @unique
+  bl                String?
+  navieraId         Int
+  naviera           Naviera   @relation(fields: [navieraId], references: [id])
+  clienteId         Int
+  cliente           Cliente   @relation(fields: [clienteId], references: [id])
+  puertoId          Int
+  puerto            Puerto    @relation(fields: [puertoId], references: [id])
+  diasLibres        Int       @default(0)
+  fechaArribo       DateTime?
+  fechaRevalidacion DateTime?
+  fechaPrevio       DateTime?
+  fechaDespacho     DateTime?
+  estadoSemaforo    String    @default("A Tiempo")
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
