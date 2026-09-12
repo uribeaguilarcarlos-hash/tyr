@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -104,3 +105,4 @@ export default async function ExpedientePage({ params }: { params: { id: string 
     </div>
   );
 }
+

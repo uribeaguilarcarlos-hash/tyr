@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
@@ -94,3 +96,5 @@ export default async function NuevoContenedorPage() {
     </div>
   );
 }
+
+
