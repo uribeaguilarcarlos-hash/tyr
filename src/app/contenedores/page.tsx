@@ -4,7 +4,6 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import { getContenedores } from '@/lib/actions';
 
-export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const contenedores = await getContenedores();
