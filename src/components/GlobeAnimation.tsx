@@ -20,8 +20,9 @@ export default function GlobeAnimation() {
 
   useEffect(() => {
     if (globeEl.current) {
+      // Configuraciones originales que funcionaban bien
       globeEl.current.controls().autoRotate = true;
-      globeEl.current.controls().autoRotateSpeed = 1.5; // Aumentamos la velocidad para que se note más
+      globeEl.current.controls().autoRotateSpeed = 1.5;
       globeEl.current.pointOfView({ lat: 20, lng: -100, altitude: 2.2 });
     }
   }, [mounted]);
@@ -57,7 +58,14 @@ export default function GlobeAnimation() {
   ];
 
   return (
-    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', cursor: 'grab', zIndex: 10 }}>
+    <div 
+      style={{ width: '100%', display: 'flex', justifyContent: 'center', cursor: 'default', zIndex: 10 }}
+      onWheelCapture={(e) => {
+        // Detener la propagación del evento wheel para que react-globe.gl no lo escuche y no haga zoom,
+        // pero sin hacer e.preventDefault() para que el navegador sí pueda hacer scroll de la página.
+        e.stopPropagation();
+      }}
+    >
       <Globe
         ref={globeEl}
         width={500}

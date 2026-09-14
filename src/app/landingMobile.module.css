@@ -469,20 +469,20 @@
 }
 
 .contactSection {
-  padding: 6rem 2rem;
+  padding: 2rem 1rem;
   background: #f8fafc;
 }
 .contactInner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .contactForm {
   background: white;
-  padding: 3rem;
-  border-radius: 16px;
+  padding: 1.5rem;
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 .contactForm h3 {
