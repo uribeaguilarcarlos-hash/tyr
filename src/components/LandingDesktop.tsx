@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Image from 'next/image';
 import styles from '@/app/landing.module.css';
 import GlobeAnimation from '@/components/GlobeAnimation';
@@ -44,30 +44,30 @@ export default function LandingDesktop() {
           <a href="#contacto" className={styles.navLink}>Contacto</a>
           <div className={styles.langSelector}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            <select 
-              ref={selectRef}
-              className={styles.langSelect} 
-              defaultValue="es"
-              onChange={(e) => {
-                const lang = e.target.value;
-                if (lang === 'es') {
-                  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
-                } else {
-                  document.cookie = "googtrans=/es/" + lang + "; path=/;";
-                  document.cookie = "googtrans=/es/" + lang + "; path=/; domain=" + window.location.hostname;
-                }
-                window.location.reload();
-              }}
-            >
-              <option value="es">ES Español</option>
-              <option value="en">US English</option>
-              <option value="zh-CN">CN 中文</option>
-              <option value="de">DE Deutsch</option>
-              <option value="fr">FR Français</option>
-              <option value="it">IT Italiano</option>
-              <option value="pt">PT Português</option>
-            </select>
+                <select 
+                  ref={selectRef}
+                  className={styles.langSelect} 
+                  defaultValue="es"
+                  onChange={(e) => {
+                    const lang = e.target.value;
+                    if (lang === 'es') {
+                      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
+                    } else {
+                      document.cookie = "googtrans=/es/" + lang + "; path=/;";
+                      document.cookie = "googtrans=/es/" + lang + "; path=/; domain=" + window.location.hostname;
+                    }
+                    window.location.reload();
+                  }}
+                >
+                  <option value="es">ES Español</option>
+                  <option value="en">US English</option>
+                  <option value="zh-CN">CN 中文</option>
+                  <option value="de">DE Deutsch</option>
+                  <option value="fr">FR Français</option>
+                  <option value="it">IT Italiano</option>
+                  <option value="pt">PT Português</option>
+                </select>
           </div>
         </nav>
       </header>
@@ -305,8 +305,6 @@ export default function LandingDesktop() {
     </>
   );
 }
-
-
 
 
 
