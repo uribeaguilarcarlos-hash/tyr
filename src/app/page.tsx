@@ -1,12 +1,17 @@
-import { headers } from 'next/headers';
+'use client';
+import { useState, useEffect } from 'react';
 import LandingDesktop from '@/components/LandingDesktop';
 import LandingMobile from '@/components/LandingMobile';
 
-export default async function Page() {
-  const headersList = await headers();
-  const userAgent = headersList.get('user-agent') || '';
-  
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+export default function Page() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   if (isMobile) {
     return <LandingMobile />;
