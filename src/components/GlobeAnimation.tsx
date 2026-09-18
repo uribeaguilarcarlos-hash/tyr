@@ -68,8 +68,8 @@ export default function GlobeAnimation() {
     >
       <Globe
         ref={globeEl}
-        width={500}
-        height={500}
+        width={Math.min(window.innerWidth - 40, 500)}
+        height={Math.min(window.innerWidth - 40, 500)}
         backgroundColor="rgba(0,0,0,0)"
         showGlobe={false} 
         showAtmosphere={true}
@@ -94,3 +94,4 @@ export default function GlobeAnimation() {
     </div>
   );
 }
+

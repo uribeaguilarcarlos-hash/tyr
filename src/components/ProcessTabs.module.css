@@ -151,8 +151,27 @@
 
 @media (max-width: 768px) {
   .timeline::before {
-    left: 24px;
+    left: 20px;
   }
+  .timelineItem, .timelineItem:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 50px;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+  .timelineDot {
+    left: 20px;
+  }
+  .timelineItem:nth-child(odd) .timelineContent,
+  .timelineItem:nth-child(even) .timelineContent {
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+}
   .timelineItem, .timelineItem:nth-child(even) {
     justify-content: flex-start;
     padding-left: 60px;
@@ -169,3 +188,4 @@
     width: 100%;
   }
 }
+
