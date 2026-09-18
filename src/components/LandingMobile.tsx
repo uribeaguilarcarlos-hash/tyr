@@ -7,7 +7,7 @@ import PartnersMarquee from '@/components/PartnersMarquee';
 
 const GlobeAnimation = dynamic(() => import('@/components/GlobeAnimation'), {
   ssr: false, // El globo no debe renderizarse en el servidor para evitar bloqueos
-  loading: () => <div style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+  loading: () => <div style={{ height: '320px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <div className={styles.heroGlobePlaceholder}></div>
   </div>
 });
