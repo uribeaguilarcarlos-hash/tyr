@@ -1,9 +1,14 @@
 "use client";
 import Image from 'next/image';
 import styles from '@/app/landing.module.css';
-import GlobeAnimation from '@/components/GlobeAnimation';
+import dynamic from 'next/dynamic';
 import ProcessTabs from '@/components/ProcessTabs';
 import PartnersMarquee from '@/components/PartnersMarquee';
+
+const GlobeAnimation = dynamic(() => import('@/components/GlobeAnimation'), {
+  ssr: false,
+  loading: () => <div style={{ width: '100%', height: '500px' }}></div>
+});
 
 import React, { useEffect, useRef } from 'react';
 

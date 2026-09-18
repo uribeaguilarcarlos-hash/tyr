@@ -1,9 +1,16 @@
 "use client";
 import Image from 'next/image';
 import styles from '@/app/landingMobile.module.css';
-import GlobeAnimation from '@/components/GlobeAnimation';
+import dynamic from 'next/dynamic';
 import ProcessTabs from '@/components/ProcessTabs';
 import PartnersMarquee from '@/components/PartnersMarquee';
+
+const GlobeAnimation = dynamic(() => import('@/components/GlobeAnimation'), {
+  ssr: false, // El globo no debe renderizarse en el servidor para evitar bloqueos
+  loading: () => <div style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className={styles.heroGlobePlaceholder}></div>
+  </div>
+});
 
 import React, { useEffect, useRef } from 'react';
 
