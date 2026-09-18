@@ -8,14 +8,11 @@ import PartnersMarquee from '@/components/PartnersMarquee';
 import React, { useEffect, useRef } from 'react';
 
 export default function LandingDesktop() {
-  const selectRef = useRef<HTMLSelectElement>(null);
-
   const [currentLang, setCurrentLang] = React.useState('es');
 
   useEffect(() => {
     const match = document.cookie.match(/googtrans=\/es\/([^;]+)/);
     if (match) {
-      if (selectRef.current) selectRef.current.value = match[1];
       setCurrentLang(match[1]);
     }
   }, []);
@@ -45,10 +42,9 @@ export default function LandingDesktop() {
           <div className={styles.langSelector}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 <select 
-                  ref={selectRef}
-                  className={styles.langSelect} 
-                  defaultValue="es"
-                  onChange={(e) => {
+              className={styles.langSelect} 
+              value={currentLang}
+              onChange={(e) => {
                     const lang = e.target.value;
                     if (lang === 'es') {
                       document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
