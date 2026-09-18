@@ -27,6 +27,28 @@ export default function LandingMobile() {
     }
   };
 
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mqpakvpl", {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.reset();
+        alert("¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.");
+      } else {
+        alert("Hubo un problema al enviar el mensaje. Por favor intenta de nuevo.");
+      }
+    } catch (error) {
+      alert("Error de conexión. Verifica tu internet e inténtalo de nuevo.");
+    }
+  };
+
   return (
     <>
       <header className={styles.header}>
@@ -243,7 +265,7 @@ export default function LandingMobile() {
             <div className={styles.contactForm}>
               <h3>Escríbenos</h3>
               <p>Llena el formulario y un asesor se pondrá en contacto contigo.</p>
-              <form action="https://formspree.io/f/mqpakvpl" method="POST">
+              <form onSubmit={handleFormSubmit}>
                 <div className={styles.formGroup}>
                   <label>Nombre</label>
                   <input type="text" name="nombre" placeholder="Tu nombre" required />
