@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Image from 'next/image';
 import styles from '@/app/landingMobile.module.css';
 import GlobeAnimation from '@/components/GlobeAnimation';
@@ -53,7 +53,7 @@ export default function LandingMobile() {
 
           {menuOpen && (
             <div className={styles.mobileMenu}>
-              <button className={styles.closeMenuBtn} onClick={() => setMenuOpen(false)}>\u00d7</button>
+              <button className={styles.closeMenuBtn} onClick={() => setMenuOpen(false)}>&times;</button>
               <a href="#servicios" className={styles.navLink} onClick={() => setMenuOpen(false)}>Servicios</a>
               <a href="#nosotros" className={styles.navLink} onClick={() => setMenuOpen(false)}>Nosotros</a>
               <a href="#contacto" className={styles.navLink} onClick={() => setMenuOpen(false)}>Contacto</a>
@@ -76,13 +76,13 @@ export default function LandingMobile() {
                     window.location.reload();
                   }}
                 >
-                  <option value="es">ES Espaol</option>
+                  <option value="es">ES Español</option>
                   <option value="en">US English</option>
-                  <option value="zh-CN">CN ??</option>
+                  <option value="zh-CN">CN 中文</option>
                   <option value="de">DE Deutsch</option>
-                  <option value="fr">FR Franais</option>
+                  <option value="fr">FR Français</option>
                   <option value="it">IT Italiano</option>
-                  <option value="pt">PT Portugus</option>
+                  <option value="pt">PT Português</option>
                 </select>
               </div>
             </div>
@@ -96,9 +96,9 @@ export default function LandingMobile() {
               <GlobeAnimation interactive={false} />
             </div>
             <div className={styles.heroContent}>
-              <span className={styles.heroBadge}>Soluciones Logísticas</span>
+              <span className={styles.heroBadge}>Soluciones LogÃ­sticas</span>
               <h1 className={styles.heroTitle}>
-                LOGÍSTICA QUE RESPONDE,<br />
+                LOGÃSTICA QUE RESPONDE,<br />
                 <span style={{ color: 'white' }}>SOLUCIONES QUE CONECTAN.</span>
               </h1>
               <p className={styles.heroLead}>Comercio Internacional sin fronteras.</p>
@@ -121,7 +121,7 @@ export default function LandingMobile() {
               <div className={styles.serviceIcon}>
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"></path><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"></path><path d="M12 10v4"></path><path d="M12 2v3"></path></svg>
               </div>
-              <h4>Marítimo</h4>
+              <h4>MarÃ­timo</h4>
               <ul>
                 <li>FCL / LCL</li>
                 <li>Consolidados</li>
@@ -133,7 +133,7 @@ export default function LandingMobile() {
               <div className={styles.serviceIcon}>
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.2-1.1.7l-1.3 2.6c-.2.4.1 1 .6 1.1l7.4 2.2-3.1 3.1-3.6-.9c-.5-.1-1 .2-1.2.6L1.3 18c-.2.4.1 1 .6 1.1l4.9 1.2 1.2 4.9c.1.5.7.8 1.1.6l2.5-1.2c.4-.2.7-.7.6-1.2l-.9-3.6 3.1-3.1 2.2 7.4c.1.5.7.8 1.1.6l2.6-1.3c.5-.2.8-.6.7-1.1z"></path></svg>
               </div>
-              <h4>Aéreo</h4>
+              <h4>AÃ©reo</h4>
               <ul>
                 <li>Carga general</li>
               </ul>
@@ -158,10 +158,10 @@ export default function LandingMobile() {
               </div>
               <h4>Agencia Aduanal</h4>
               <ul>
-                <li>Importación</li>
-                <li>Exportación</li>
+                <li>ImportaciÃ³n</li>
+                <li>ExportaciÃ³n</li>
                 <li>Despacho aduanal</li>
-                <li>Asesoría regulatoria</li>
+                <li>AsesorÃ­a regulatoria</li>
               </ul>
             </div>
 
@@ -174,15 +174,15 @@ export default function LandingMobile() {
         <section className={styles.whySection} id="nosotros">
           <div className={styles.whyInner}>
             <div className={styles.whyText}>
-              <h2>¿POR QUÉ TYR CARGO?</h2>
-              <h3>TU SOCIO LOGÍSTICO DE CONFIANZA</h3>
+              <h2>Â¿POR QUÃ‰ TYR CARGO?</h2>
+              <h3>TU SOCIO LOGÃSTICO DE CONFIANZA</h3>
               <ul className={styles.whyList}>
                 <li>
                   <div className={styles.whyIcon}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
                   <div>
-                    <h4>Atención Directa y a la Medida</h4>
+                    <h4>AtenciÃ³n Directa y a la Medida</h4>
                     <p>Un equipo experto disponible para ti, con soluciones adaptadas a tu negocio.</p>
                   </div>
                 </li>
@@ -191,8 +191,8 @@ export default function LandingMobile() {
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
                   <div>
-                    <h4>Comunicación Clara y Oportuna</h4>
-                    <p>Información precisa, a tiempo, siempre. Visibilidad total de tu carga en todo momento.</p>
+                    <h4>ComunicaciÃ³n Clara y Oportuna</h4>
+                    <p>InformaciÃ³n precisa, a tiempo, siempre. Visibilidad total de tu carga en todo momento.</p>
                   </div>
                 </li>
                 <li>
@@ -201,7 +201,7 @@ export default function LandingMobile() {
                   </div>
                   <div>
                     <h4>Seguridad y Cumplimiento</h4>
-                    <p>Compromiso absoluto con la seguridad en cada etapa del proceso logístico.</p>
+                    <p>Compromiso absoluto con la seguridad en cada etapa del proceso logÃ­stico.</p>
                   </div>
                 </li>
                 <li>
@@ -209,8 +209,8 @@ export default function LandingMobile() {
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
                   <div>
-                    <h4>Acompañamiento Estratégico</h4>
-                    <p>Tu operación no es un número, es nuestra prioridad. Estamos contigo en cada decisión.</p>
+                    <h4>AcompaÃ±amiento EstratÃ©gico</h4>
+                    <p>Tu operaciÃ³n no es un nÃºmero, es nuestra prioridad. Estamos contigo en cada decisiÃ³n.</p>
                   </div>
                 </li>
               </ul>
@@ -218,7 +218,7 @@ export default function LandingMobile() {
             <div className={styles.whyImage}>
               <Image 
                 src="/logistics-illustration.png" 
-                alt="Logística TYR Cargo" 
+                alt="LogÃ­stica TYR Cargo" 
                 width={600} 
                 height={600} 
                 style={{ objectFit: 'contain' }}
@@ -230,14 +230,14 @@ export default function LandingMobile() {
         <section className={styles.misionVisionSection}>
           <div className={styles.misionVisionInner}>
             <div className={styles.mvCard}>
-              <div className={styles.mvIcon}>🎯</div>
-              <h3>Nuestra Misión</h3>
-              <p>Brindar soluciones logísticas integrales y de excelencia, conectando a nuestros clientes con el mundo de manera eficiente, transparente y totalmente segura.</p>
+              <div className={styles.mvIcon}>ðŸŽ¯</div>
+              <h3>Nuestra MisiÃ³n</h3>
+              <p>Brindar soluciones logÃ­sticas integrales y de excelencia, conectando a nuestros clientes con el mundo de manera eficiente, transparente y totalmente segura.</p>
             </div>
             <div className={styles.mvCard}>
-              <div className={styles.mvIcon}>👁️</div>
-              <h3>Nuestra Visión</h3>
-              <p>Ser la empresa líder en logística internacional en México, reconocida por nuestra innovación tecnológica, confiabilidad operativa y compromiso absoluto con el éxito de cada operación.</p>
+              <div className={styles.mvIcon}>ðŸ‘ï¸</div>
+              <h3>Nuestra VisiÃ³n</h3>
+              <p>Ser la empresa lÃ­der en logÃ­stica internacional en MÃ©xico, reconocida por nuestra innovaciÃ³n tecnolÃ³gica, confiabilidad operativa y compromiso absoluto con el Ã©xito de cada operaciÃ³n.</p>
             </div>
           </div>
         </section>
@@ -245,26 +245,26 @@ export default function LandingMobile() {
         <section className={styles.contactSection} id="contacto">
           <div className={styles.contactInner}>
             <div className={styles.contactForm}>
-              <h3>Escríbenos</h3>
-              <p>Llena el formulario y un asesor se pondrá en contacto contigo.</p>
+              <h3>EscrÃ­benos</h3>
+              <p>Llena el formulario y un asesor se pondrÃ¡ en contacto contigo.</p>
               <form action="https://formspree.io/f/mqpakvpl" method="POST">
                 <div className={styles.formGroup}>
                   <label>Nombre</label>
                   <input type="text" name="nombre" placeholder="Tu nombre" required />
                 </div>
                 <div className={styles.formGroup}>
-                  <label>Correo Electrónico</label>
+                  <label>Correo ElectrÃ³nico</label>
                   <input type="email" name="email" placeholder="tu@correo.com" required />
                 </div>
                 <div className={styles.formGroup}>
                   <label>Mensaje</label>
-                  <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                  <textarea name="mensaje" placeholder="Â¿En quÃ© podemos ayudarte?" required></textarea>
                 </div>
                 <button type="submit" className={styles.btnSubmit}>Enviar Mensaje</button>
               </form>
             </div>
             <div className={styles.contactInfo}>
-              <h3>Hablemos de tu próxima operación exitosa.</h3>
+              <h3>Hablemos de tu prÃ³xima operaciÃ³n exitosa.</h3>
               <div className={styles.infoItem}>
                 <div className={styles.infoIcon}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -314,14 +314,16 @@ export default function LandingMobile() {
           <p>&copy; {new Date().getFullYear()} TYR Cargo. Todos los derechos reservados.</p>
           <div className={styles.footerLegal}>
             <a href="/documentos/aviso-de-privacidad.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a>
-            <a href="/documentos/terminos-y-condiciones.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
-            <a href="/documentos/carta-presentacion.pdf" target="_blank" rel="noopener noreferrer">Carta Presentación</a>
+            <a href="/documentos/terminos-y-condiciones.pdf" target="_blank" rel="noopener noreferrer">TÃ©rminos y Condiciones</a>
+            <a href="/documentos/carta-presentacion.pdf" target="_blank" rel="noopener noreferrer">Carta PresentaciÃ³n</a>
           </div>
         </div>
       </footer>
     </>
   );
 }
+
+
 
 
 

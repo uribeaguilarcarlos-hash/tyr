@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Image from 'next/image';
 import styles from '@/app/landing.module.css';
 import GlobeAnimation from '@/components/GlobeAnimation';
@@ -62,7 +62,7 @@ export default function LandingDesktop() {
             >
               <option value="es">ES Español</option>
               <option value="en">US English</option>
-              <option value="zh-CN">ZH 中文</option>
+              <option value="zh-CN">CN 中文</option>
               <option value="de">DE Deutsch</option>
               <option value="fr">FR Français</option>
               <option value="it">IT Italiano</option>
@@ -305,6 +305,8 @@ export default function LandingDesktop() {
     </>
   );
 }
+
+
 
 
 
