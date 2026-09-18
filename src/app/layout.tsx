@@ -28,13 +28,13 @@ export default function RootLayout({
         </Script>
         <Script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" strategy="afterInteractive" />
         {/* Google Analytics */}
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-TU_ID_AQUI" />
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-Y1TZGMHJYW" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-TU_ID_AQUI');
+            gtag('config', 'G-Y1TZGMHJYW');
           `}
         </Script>
 </head>
@@ -45,4 +45,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 

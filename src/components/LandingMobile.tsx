@@ -230,7 +230,7 @@ export default function LandingMobile() {
             <div className={styles.contactForm}>
               <h3>Escríbenos</h3>
               <p>Llena el formulario y un asesor se pondrá en contacto contigo.</p>
-              <form action="https://formspree.io/f/TU_FORMSPREE_ID" method="POST">
+              <form action="https://formspree.io/f/mqpakvpl" method="POST">
                 <div className={styles.formGroup}>
                   <label>Nombre</label>
                   <input type="text" name="nombre" placeholder="Tu nombre" required />
@@ -305,6 +305,7 @@ export default function LandingMobile() {
     </>
   );
 }
+
 
 
 
