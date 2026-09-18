@@ -48,6 +48,8 @@ export default function PartnersMarquee() {
                 src={`/logos/${partner.id}.png`} 
                 alt={`${partner.name} Logo`} 
                 className={styles.partnerLogo}
+                width="140"
+                height="60"
                 loading="lazy"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
@@ -67,6 +69,8 @@ export default function PartnersMarquee() {
                 src={`/logos/${partner.id}.png`} 
                 alt={`${partner.name} Logo`} 
                 className={styles.partnerLogo}
+                width="140"
+                height="60"
                 loading="lazy"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
@@ -96,6 +100,8 @@ export default function PartnersMarquee() {
                 src={`/logos/${partner.id}.png`} 
                 alt={`${partner.name} Logo`} 
                 className={styles.partnerLogo}
+                width="140"
+                height="60"
                 loading="lazy"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
