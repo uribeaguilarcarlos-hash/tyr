@@ -3,8 +3,16 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.tyrcargo.com"),
   title: "TYR Cargo - Logística Internacional",
   description: "Soluciones logísticas integrales y de excelencia.",
+  openGraph: {
+    title: "TYR Cargo - Logística Internacional",
+    description: "Soluciones logísticas integrales y de excelencia.",
+    url: "https://www.tyrcargo.com",
+    siteName: "TYR Cargo",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
