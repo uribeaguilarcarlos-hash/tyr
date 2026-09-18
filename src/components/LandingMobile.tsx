@@ -84,12 +84,19 @@ export default function LandingMobile() {
                   value={currentLang}
                   onChange={(e) => {
                     const lang = e.target.value;
-                    if (lang === 'es') {
-                      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
-                    } else {
+                    const host = window.location.hostname;
+                    const baseHost = host.startsWith('www.') ? host.substring(4) : host;
+                    
+                    // Limpiar TODAS las posibles cookies de Google Translate
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + host;
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + host;
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + baseHost;
+                    
+                    if (lang !== 'es') {
                       document.cookie = "googtrans=/es/" + lang + "; path=/;";
-                      document.cookie = "googtrans=/es/" + lang + "; path=/; domain=" + window.location.hostname;
+                      document.cookie = "googtrans=/es/" + lang + "; path=/; domain=" + host;
+                      document.cookie = "googtrans=/es/" + lang + "; path=/; domain=." + baseHost;
                     }
                     window.location.reload();
                   }}
