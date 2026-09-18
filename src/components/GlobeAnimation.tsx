@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
-export default function GlobeAnimation() {
+export default function GlobeAnimation({ interactive = true }: { interactive?: boolean }) {
   const [mounted, setMounted] = useState(false);
   const [countries, setCountries] = useState<any[]>([]);
   const globeEl = useRef<any>(null);
@@ -24,6 +24,11 @@ export default function GlobeAnimation() {
       globeEl.current.controls().autoRotate = true;
       globeEl.current.controls().autoRotateSpeed = 1.5;
       globeEl.current.pointOfView({ lat: 20, lng: -100, altitude: 2.2 });
+      if (!interactive) {
+        globeEl.current.controls().enableZoom = false;
+        globeEl.current.controls().enableRotate = false;
+        globeEl.current.controls().enablePan = false;
+      }
     }
   }, [mounted]);
 
@@ -94,4 +99,5 @@ export default function GlobeAnimation() {
     </div>
   );
 }
+
 

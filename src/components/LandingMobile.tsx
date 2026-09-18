@@ -11,6 +11,7 @@ export default function LandingMobile() {
   const selectRef = useRef<HTMLSelectElement>(null);
 
   const [currentLang, setCurrentLang] = React.useState('es');
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   useEffect(() => {
     const match = document.cookie.match(/googtrans=\/es\/([^;]+)/);
@@ -38,45 +39,61 @@ export default function LandingMobile() {
           </a>
         </div>
         
-        <nav className={styles.nav}>
-          <a href="#servicios" className={styles.navLink}>Servicios</a>
-          <a href="#nosotros" className={styles.navLink}>Nosotros</a>
-          <a href="#contacto" className={styles.navLink}>Contacto</a>
-          <div className={styles.langSelector}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            <select 
-              ref={selectRef}
-              className={styles.langSelect} 
-              defaultValue="es"
-              onChange={(e) => {
-                const lang = e.target.value;
-                if (lang === 'es') {
-                  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
-                } else {
-                  document.cookie = "googtrans=/es/" + lang + "; path=/;";
-                  document.cookie = "googtrans=/es/" + lang + "; path=/; domain=" + window.location.hostname;
-                }
-                window.location.reload();
-              }}
-            >
-              <option value="es">ES Español</option>
-              <option value="en">US English</option>
-              <option value="zh-CN">ZH 中文</option>
-              <option value="de">DE Deutsch</option>
-              <option value="fr">FR Français</option>
-              <option value="it">IT Italiano</option>
-              <option value="pt">PT Português</option>
-            </select>
-          </div>
-        </nav>
+        <button 
+            className={styles.hamburgerBtn}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          {menuOpen && (
+            <div className={styles.mobileMenu}>
+              <button className={styles.closeMenuBtn} onClick={() => setMenuOpen(false)}>\u00d7</button>
+              <a href="#servicios" className={styles.navLink} onClick={() => setMenuOpen(false)}>Servicios</a>
+              <a href="#nosotros" className={styles.navLink} onClick={() => setMenuOpen(false)}>Nosotros</a>
+              <a href="#contacto" className={styles.navLink} onClick={() => setMenuOpen(false)}>Contacto</a>
+              
+              <div className={styles.langSelector}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <select 
+                  ref={selectRef}
+                  className={styles.langSelect} 
+                  defaultValue="es"
+                  onChange={(e) => {
+                    const lang = e.target.value;
+                    if (lang === 'es') {
+                      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
+                    } else {
+                      document.cookie = "googtrans=/es/" + lang + "; path=/;";
+                      document.cookie = "googtrans=/es/" + lang + "; path=/; domain=" + window.location.hostname;
+                    }
+                    window.location.reload();
+                  }}
+                >
+                  <option value="es">ES Espaol</option>
+                  <option value="en">US English</option>
+                  <option value="zh-CN">CN ??</option>
+                  <option value="de">DE Deutsch</option>
+                  <option value="fr">FR Franais</option>
+                  <option value="it">IT Italiano</option>
+                  <option value="pt">PT Portugus</option>
+                </select>
+              </div>
+            </div>
+          )}
       </header>
 
       <main>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroGlobe}>
-              <GlobeAnimation />
+              <GlobeAnimation interactive={false} />
             </div>
             <div className={styles.heroContent}>
               <span className={styles.heroBadge}>Soluciones Logísticas</span>
@@ -305,6 +322,8 @@ export default function LandingMobile() {
     </>
   );
 }
+
+
 
 
 
