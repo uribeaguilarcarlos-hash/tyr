@@ -10,13 +10,24 @@ import React, { useEffect, useRef } from 'react';
 export default function LandingDesktop() {
   const selectRef = useRef<HTMLSelectElement>(null);
 
+  const [currentLang, setCurrentLang] = React.useState('es');
+
   useEffect(() => {
-    // Read googtrans cookie to set correct dropdown value on load
     const match = document.cookie.match(/googtrans=\/es\/([^;]+)/);
-    if (match && selectRef.current) {
-      selectRef.current.value = match[1];
+    if (match) {
+      if (selectRef.current) selectRef.current.value = match[1];
+      setCurrentLang(match[1]);
     }
   }, []);
+
+  const getFormLink = (lang: string) => {
+    switch (lang) {
+      case 'es': return 'https://docs.google.com/forms/d/e/1FAIpQLSfdZ1V047jaOvE8LMzqWBNgNU7Wpb4dssR2UazgLxuzdPuiyg/viewform';
+      case 'zh-CN': return 'https://forms.gle/eCAT7hQMELHVwqmV8';
+      case 'fr': return 'https://forms.gle/5xpbnMwdCHi46arQ8';
+      default: return 'https://forms.gle/toir5h2jWTGsd9PE9';
+    }
+  };
 
   return (
     <>
@@ -75,7 +86,7 @@ export default function LandingDesktop() {
               </h1>
               <p className={styles.heroLead}>Comercio Internacional sin fronteras.</p>
               <div className={styles.heroCtas}>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdZ1V047jaOvE8LMzqWBNgNU7Wpb4dssR2UazgLxuzdPuiyg/viewform" target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryHero}>Cotiza ahora</a>
+                <a href={getFormLink(currentLang)} target="_blank" rel="noopener noreferrer" className={styles.btnPrimaryHero}>Cotiza ahora</a>
               </div>
             </div>
           </div>
@@ -219,18 +230,18 @@ export default function LandingDesktop() {
             <div className={styles.contactForm}>
               <h3>Escríbenos</h3>
               <p>Llena el formulario y un asesor se pondrá en contacto contigo.</p>
-              <form>
+              <form action="https://formspree.io/f/TU_FORMSPREE_ID" method="POST">
                 <div className={styles.formGroup}>
                   <label>Nombre</label>
-                  <input type="text" placeholder="Tu nombre" required />
+                  <input type="text" name="nombre" placeholder="Tu nombre" required />
                 </div>
                 <div className={styles.formGroup}>
                   <label>Correo Electrónico</label>
-                  <input type="email" placeholder="tu@correo.com" required />
+                  <input type="email" name="email" placeholder="tu@correo.com" required />
                 </div>
                 <div className={styles.formGroup}>
                   <label>Mensaje</label>
-                  <textarea placeholder="¿En qué podemos ayudarte?" required></textarea>
+                  <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
                 </div>
                 <button type="submit" className={styles.btnSubmit}>Enviar Mensaje</button>
               </form>
@@ -294,3 +305,6 @@ export default function LandingDesktop() {
     </>
   );
 }
+
+
+
