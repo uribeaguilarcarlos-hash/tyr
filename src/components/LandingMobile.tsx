@@ -17,6 +17,13 @@ import React, { useEffect, useRef } from 'react';
 export default function LandingMobile() {
   const [currentLang, setCurrentLang] = React.useState('es');
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [showGlobe, setShowGlobe] = React.useState(false);
+
+  useEffect(() => {
+    // Retrasar la inicialización del globo 3D para mejorar el TBT en dispositivos móviles
+    const timer = setTimeout(() => setShowGlobe(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const match = document.cookie.match(/googtrans=\/es\/([^;]+)/);
@@ -126,7 +133,7 @@ export default function LandingMobile() {
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroGlobe}>
-              <GlobeAnimation interactive={false} />
+              {showGlobe && <GlobeAnimation interactive={false} />}
             </div>
             <div className={styles.heroContent}>
               <span className={styles.heroBadge}>Soluciones Logísticas</span>

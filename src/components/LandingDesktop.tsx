@@ -14,6 +14,13 @@ import React, { useEffect, useRef } from 'react';
 
 export default function LandingDesktop() {
   const [currentLang, setCurrentLang] = React.useState('es');
+  const [showGlobe, setShowGlobe] = React.useState(false);
+
+  useEffect(() => {
+    // Retrasar la inicialización del globo 3D para mejorar el TBT (Total Blocking Time) en Lighthouse
+    const timer = setTimeout(() => setShowGlobe(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const match = document.cookie.match(/googtrans=\/es\/([^;]+)/);
@@ -107,7 +114,7 @@ export default function LandingDesktop() {
         <section className={styles.hero}>
           <div className={styles.heroInner}>
             <div className={styles.heroGlobe}>
-              <GlobeAnimation />
+              {showGlobe && <GlobeAnimation />}
             </div>
             <div className={styles.heroContent}>
               <span className={styles.heroBadge}>Soluciones Logísticas</span>
