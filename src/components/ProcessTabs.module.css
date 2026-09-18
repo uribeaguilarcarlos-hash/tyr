@@ -172,20 +172,3 @@
     padding: 1rem;
   }
 }
-  .timelineItem, .timelineItem:nth-child(even) {
-    justify-content: flex-start;
-    padding-left: 60px;
-    padding-right: 0;
-  }
-  .timelineDot {
-    left: 24px;
-  }
-  .timelineItem:nth-child(odd) .timelineContent,
-  .timelineItem:nth-child(even) .timelineContent {
-    margin: 0;
-    flex-direction: row;
-    text-align: left;
-    width: 100%;
-  }
-}
-
