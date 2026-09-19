@@ -246,6 +246,7 @@ export default function LandingDesktop() {
               />
             </div>
           </div>
+        </section>
         <section className={styles.misionVisionSection}>
           <div className={styles.misionVisionInner}>
             <div className={styles.mvCard}>
