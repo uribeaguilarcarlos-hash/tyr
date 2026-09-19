@@ -270,12 +270,16 @@ export default function LandingMobile() {
         <section className={styles.misionVisionSection}>
           <div className={styles.misionVisionInner}>
             <div className={styles.mvCard}>
-              <div className={styles.mvIcon}>🎯</div>
+              <div className={styles.mvIcon}>
+                <img src="/mision.png" alt="Misión" width="80" height="80" style={{ objectFit: 'contain' }} />
+              </div>
               <h3>Nuestra Misión</h3>
               <p>Brindar soluciones logísticas integrales y de excelencia, conectando a nuestros clientes con el mundo de manera eficiente, transparente y totalmente segura.</p>
             </div>
             <div className={styles.mvCard}>
-              <div className={styles.mvIcon}>👁️</div>
+              <div className={styles.mvIcon}>
+                <img src="/vision.png" alt="Visión" width="80" height="80" style={{ objectFit: 'contain' }} />
+              </div>
               <h3>Nuestra Visión</h3>
               <p>Ser la empresa líder en logística internacional en México, reconocida por nuestra innovación tecnológica, confiabilidad operativa y compromiso absoluto con el éxito de cada operación.</p>
             </div>
