@@ -35,7 +35,7 @@ export default function LandingDesktop() {
       case 'zh-CN': return 'https://forms.gle/eCAT7hQMELHVwqmV8';
       case 'fr': return 'https://forms.gle/5xpbnMwdCHi46arQ8';
       case 'de': return 'https://forms.gle/dGoADMJkeJ3uBCQt7';
-      case 'it': return 'https://docs.google.com/forms/d/e/1FAIpQLSekIksCVmfPK3lQzIagmQZGiAFdvZnjw5bmCnaKpVxCR_ghsw/viewform?usp=header';
+      case 'it': return 'https://forms.gle/Lhi5pXrbvagBZt759';
       case 'pt': return 'https://forms.gle/LX8JSTWyh1fcdxGd7';
       default: return 'https://forms.gle/toir5h2jWTGsd9PE9';
     }
