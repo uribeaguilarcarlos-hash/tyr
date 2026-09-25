@@ -45,14 +45,22 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-5Z9BDTLD');
           `}
         </Script>
-        {/* Google Analytics */}
+        {/* Google Analytics & Google Ads */}
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-Y1TZGMHJYW" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
             gtag('config', 'G-Y1TZGMHJYW');
+            gtag('config', 'AW-18474841726');
+            
+            gtag('event', 'conversion', {
+                'send_to': 'AW-18474841726/nHg1CPTJoIUdEP7svulE',
+                'value': 1.0,
+                'currency': 'MXN'
+            });
           `}
         </Script>
 </head>
